@@ -18,6 +18,12 @@ def setup(options):
     # Compute 
     a = 1./(1.+z)
 
+    # CAMB wants 
+    if a[1]<a[0]:
+        z = z[::-1]
+        a = a[::-1]
+        w = w[::-1]
+
     # Return all these to the 
     return {'z': z, 'w':w, 'a':a}
 
